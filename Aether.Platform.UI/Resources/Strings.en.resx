@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+  <data name="Common_OK" xml:space="preserve"><value>OK</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Main_Title" xml:space="preserve"><value>Main</value></data>
+  <data name="StatusLog_Title" xml:space="preserve"><value>Status Log</value></data>
+  <data name="ControlDebug_Title" xml:space="preserve"><value>Control Debug</value></data>
+  <data name="VisionDebug_Title" xml:space="preserve"><value>Vision Debug</value></data>
+  <data name="ProcessDebug_Title" xml:space="preserve"><value>Process Debug</value></data>
+  <data name="SystemConfig_Title" xml:space="preserve"><value>System Config</value></data>
+</root>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1B2C3D4-0009-4E5F-8A9B-0C1D2E3F4A5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Aether.Platform.UI</RootNamespace>
+    <AssemblyName>Aether.Platform.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>7.3</LangVersion>
+    <RuntimeIdentifiers>win</RuntimeIdentifiers>
+    <GenerateResourceMSBuildArchitecture>CurrentArchitecture</GenerateResourceMSBuildArchitecture>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <GenerateSatelliteAssembliesForCore>false</GenerateSatelliteAssembliesForCore>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Shell\MainShellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shell\NavigationManager.cs" />
+    <Compile Include="Modules\MainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\StatusLogView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ControlDebugView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\VisionDebugView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ProcessDebugView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\SystemConfigView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\HistoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\VersionInfoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\LoginView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\WorkflowEditorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\SubPanels\InfoRowPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SimulationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ScriptEditorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ScriptEditorView.FindReplace.cs" />
+    <Compile Include="Modules\ScriptEditorView.Debug.cs" />
+    <Compile Include="Modules\ScriptEditorView.Syntax.cs" />
+    <Compile Include="Modules\ScriptEditorView.Presets.cs" />
+    <Compile Include="Modules\SimDataEditorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Strings.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aether.Platform.Core\Aether.Platform.Core.csproj">
+      <Project>{A1B2C3D4-0001-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Services\Aether.Platform.Services.csproj">
+      <Project>{A1B2C3D4-0002-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Data\Aether.Platform.Data.csproj">
+      <Project>{A1B2C3D4-0006-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Devices\Aether.Platform.Devices.csproj">
+      <Project>{A1B2C3D4-0004-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Devices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Scripting\Aether.Platform.Scripting.csproj">
+      <Project>{A1B2C3D4-0007-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Scripting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Workflow\Aether.Platform.Workflow.csproj">
+      <Project>{A1B2C3D4-0008-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Business\Aether.Platform.Business.csproj">
+      <Project>{A1B2C3D4-0003-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.App\Aether.Platform.App.csproj">
+      <Project>{A1B2C3D4-0010-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.App</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(USERPROFILE)\.nuget\packages\newtonsoft.json\13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="MoonSharp.Interpreter">
+      <HintPath>$(USERPROFILE)\.nuget\packages\moonSharp\2.0.0\lib\net40-client\MoonSharp.Interpreter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Strings.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1B2C3D4-0004-4E5F-8A9B-0C1D2E3F4A5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Aether.Platform.Devices</RootNamespace>
+    <AssemblyName>Aether.Platform.Devices</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>7.3</LangVersion>
+    <RuntimeIdentifiers>win</RuntimeIdentifiers>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DeviceStep.cs" />
+    <Compile Include="HalBinding.cs" />
+    <Compile Include="DeviceFactory.cs" />
+    <Compile Include="Base\DeviceBase.cs" />
+    <Compile Include="Base\PlcBasedDevice.cs" />
+    <Compile Include="Base\DirectControlDevice.cs" />
+    <Compile Include="MTFTest\MTFTestDevice.cs" />
+    <Compile Include="ZG13\ZG13Device.cs" />
+    <Compile Include="XL07\XL07Device.cs" />
+    <Compile Include="PX09\PX09Device.cs" />
+    <Compile Include="DJ10\DJ10Device.cs" />
+    <Compile Include="ZZ14\ZZ14Device.cs" />
+    <Compile Include="BB08\BB08Device.cs" />
+    <Compile Include="DJ16\DJ16Device.cs" />
+    <Compile Include="SF16\SF16Device.cs" />
+    <Compile Include="DB06\DB06Device.cs" />
+    <Compile Include="CC03\CC03Device.cs" />
+    <Compile Include="AssemblyNew\AssemblyNewDevice.cs" />
+    <Compile Include="Assembly\AssemblyDevice.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aether.Platform.Core\Aether.Platform.Core.csproj">
+      <Project>{A1B2C3D4-0001-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.HAL\Aether.Platform.HAL.csproj">
+      <Project>{A1B2C3D4-0005-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.HAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

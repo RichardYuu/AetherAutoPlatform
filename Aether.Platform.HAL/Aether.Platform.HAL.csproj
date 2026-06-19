@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1B2C3D4-0005-4E5F-8A9B-0C1D2E3F4A5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Aether.Platform.HAL</RootNamespace>
+    <AssemblyName>Aether.Platform.HAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>7.3</LangVersion>
+    <RuntimeIdentifiers>win</RuntimeIdentifiers>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HardwareServiceMode.cs" />
+    <Compile Include="HardwareServiceFactory.cs" />
+    <Compile Include="Real\RealHardwareService.cs" />
+    <Compile Include="Real\KeyencePLC.cs" />
+    <Compile Include="Real\HuichuanPLC.cs" />
+    <Compile Include="Real\LeadshineMotion.cs" />
+    <Compile Include="Real\DigitalIOController.cs" />
+    <Compile Include="Real\CameraBasler.cs" />
+    <Compile Include="Real\CameraHIK.cs" />
+    <Compile Include="Real\BarcodeScannerDevice.cs" />
+    <Compile Include="Real\SerialPortDevice.cs" />
+    <Compile Include="Sim\SimulatedHardwareService.cs" />
+    <Compile Include="Sim\SimulatedAxis.cs" />
+    <Compile Include="Sim\SimulatedPLC.cs" />
+    <Compile Include="Sim\SimulatedCamera.cs" />
+    <Compile Include="Sim\SimulatedScanner.cs" />
+    <Compile Include="Sim\SimulatedDigitalIO.cs" />
+    <Compile Include="Sim\SimulatedAnalogIO.cs" />
+    <Compile Include="Sim\SimulatedSerialPort.cs" />
+    <Compile Include="Sim\SimulatedModbus.cs" />
+    <Compile Include="Sim\SimulatedScale.cs" />
+    <Compile Include="Sim\SimulatedHeightGauge.cs" />
+    <Compile Include="Sim\SimulatedTemperature.cs" />
+    <Compile Include="Sim\SimulatedEPValve.cs" />
+    <Compile Include="Sim\SimulatedMicropressure.cs" />
+    <Compile Include="Sim\SimulatedExposureMeter.cs" />
+    <Compile Include="Sim\SimulatedSpotAnalyzer.cs" />
+    <Compile Include="Sim\HardwareRecorder.cs" />
+    <Compile Include="Adapters\PlcBasedAdapter.cs" />
+    <Compile Include="Adapters\DirectControlAdapter.cs" />
+    <Compile Include="Peripherals\HeightGaugeDevice.cs" />
+    <Compile Include="Peripherals\TemperatureControllerDevice.cs" />
+    <Compile Include="Peripherals\MicropressureSensorDevice.cs" />
+    <Compile Include="Peripherals\EPValveDevice.cs" />
+    <Compile Include="Peripherals\ExposureMeterDevice.cs" />
+    <Compile Include="Peripherals\SpotAnalyzerDevice.cs" />
+    <Compile Include="Peripherals\ScaleDevice.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aether.Platform.Core\Aether.Platform.Core.csproj">
+      <Project>{A1B2C3D4-0001-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(USERPROFILE)\.nuget\packages\newtonsoft.json\13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

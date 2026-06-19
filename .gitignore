@@ -1,0 +1,590 @@
+# =============================================================================
+# Aether 设备软件平台 — .gitignore
+# 适用于：C# (.NET Framework / .NET Core) + C/C++ + Python 混合开发
+# 可复用为通用模板
+# =============================================================================
+
+# =============================================================================
+# Visual Studio / C# (.NET)
+# =============================================================================
+
+## Build output
+[Bb]in/
+[Dd]ebug/
+[Rr]elease/
+[Dd]ebugPublic/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]uild/
+[Bb]uilds/
+
+## MSBuild
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+## NuGet
+packages/
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+## Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.[Cc]ache
+*.bak
+*.log
+*.tlog
+*.ilk
+*.exp
+*.lib
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.ipch
+*.bsc
+*.db
+
+## Visual Studio project-specific
+*.csproj.user
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj.FileListAbsolute.txt
+*.vcxproj.UserInternal
+UpgradeLog*.htm
+UpgradeLog*.txt
+
+## StyleCop
+StyleCop.Cache
+
+## JetBrains ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## dotCover
+dotCover.*.job
+*.dotCover
+
+## NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+
+## InstallShield
+*.ism
+[Ii]nstall[Ss]hield/
+
+## Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.tmp
+*.jtl
+*.coverage
+*.coveragexml
+*.testlog
+*.testdiag
+
+## SonarQube
+.sonarqube/
+*.sonarscan/
+
+## Fody
+Weaving.Tasks.*
+
+## VSTest
+*.vstest
+
+## NDepend
+.ndproj
+*.ndar
+
+## CodeRush
+.cr/
+
+## Xamarin
+*.ipa
+*.apk
+*.dsym
+
+## OpenCover
+*.oacover
+
+# =============================================================================
+# C/C++
+# =============================================================================
+
+## Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.a
+*.la
+*.lai
+*.so
+*.dll
+*.dylib
+*.dll.a
+*.def
+*.pdb
+
+## Precompiled Headers
+*.gch
+*.pch
+*.pchi
+
+## Compiled resources
+*.res
+*.rc
+*.rsc
+
+## Object Library
+*.lib
+
+## Shared Libraries (inc. Windows)
+*.so.*
+*.dll.a
+*.dylib.*
+
+## Executables
+*.exe
+*.out
+*.app
+*.com
+*.bin
+*.elf
+*.exe.manifest
+
+## Windows executable location database
+*.db
+
+## IAR Embedded Workbench
+$PROJ_DIR$/
+ew*.txt
+ew*.dep
+Debug/
+Release/
+Flash/
+RAM/
+settings/
+
+## Keil ARM MDK
+*.uvguix.*
+*.uvoptx
+*.scr
+*.plg
+*.dep
+JLinkLog.txt
+RTE/
+
+## STM32CubeIDE / Eclipse
+.metadata/
+*.launch
+*.exodriver
+
+## CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+CMakeUserPresets.json
+compile_commands.json
+
+## PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+__pycache__/
+
+# =============================================================================
+# Python
+# =============================================================================
+
+## Bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*$py.class
+
+## Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.venv*/
+venv*/
+env*/
+virtualenv/
+
+## Distribution / packaging
+.Python
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+## Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+## Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+## Jupyter
+.ipynb_checkpoints/
+
+## mypy / pytype / Pylance
+.mypy_cache/
+.pytype/
+.pyre/
+.pyc/
+.dmypy.json
+dmypy.json
+
+## pyenv
+.python-version
+
+## pybuilder
+target/
+
+## IPython
+profile_default/
+ipython_config.py
+
+## pdm
+.pdm.toml
+.pdm-python
+
+## Conda / Mamba
+.conda/
+miniconda3/
+
+## uv
+.uv/
+
+## Poetry
+.poetry/
+
+## Ruff
+.ruff_cache/
+
+## Bandit
+.bandit_cache/
+
+## PyInstaller
+*.spec
+*.manifest
+
+# =============================================================================
+# IDEs & Editors
+# =============================================================================
+
+## VS Code
+.vscode/
+.vscode-server/
+.vscode-remote/
+*.code-workspace
+*.vscode-workspace
+
+## Visual Studio (legacy)
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.suo
+
+## JetBrains IDEs (IntelliJ IDEA, CLion, PyCharm, Rider, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+
+## Eclipse
+.project
+.classpath
+.settings/
+*.launch
+*.prefs
+.buildpath
+
+## NetBeans
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+build/
+*.nbm
+
+## Qt Creator
+*.pro.user*
+*.pro.user.*
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+*.qm
+*.qm.deps
+*qmake.stash
+*.autosave
+qtcreator-*
+*.generated
+
+## Keil MDK / ARM
+*.uvguix.*
+*.uvoptx
+*.uvproj.*
+*.dep
+*.bak
+*.crf
+*.d
+*.htm
+*.iex
+*.map
+*.prj
+*.tra
+*.xcl
+
+## IAR Embedded Workbench
+*.ewd
+*.ewp
+*.eww
+*.ewt
+
+## CLion
+cmake-build-*/
+*.clion-workspace
+
+## Xcode
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+**/.xcode.env.local
+
+## Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+## Atom
+.atom/
+
+## Vim / Neovim
+*.swp
+*.swo
+*.swn
+*.bak
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+Sessionx.vim
+.netrwhist
+*.vim-cocotags
+
+## Emacs
+*~
+#*#
+.#*
+\#*\#
+.TAGS
+
+## Cursor
+.cursor/
+.cursor-tasks.json
+
+## Zed
+.zed/
+
+## Notepad++
+nppBackup/
+
+# =============================================================================
+# General OS & Environment
+# =============================================================================
+
+## Windows
+Thumbs.db*
+[Dd]esktop.ini
+[Dd]ocuments and [Ss]ettings/
+[Ss]ystem [Vv]olume [Ii]nformation/
+*.lnk
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+## Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# Tools & Utilities
+# =============================================================================
+
+## Git
+.git/
+.gitattributes
+.gitignore_global
+
+## Docker
+.docker/
+docker-compose.override.yml
+*.dockerfile
+
+## WSL
+.wslconfig
+
+## SSH
+.ssh/
+
+## GPG
+*.gpg
+*.asc
+
+## dotenv / secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+*.key
+*.pem
+*.cert
+*.crt
+*.pfx
+password*
+secret*
+
+## Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+crash.log
+crash.*.log
+
+## Ansible
+*.retry
+
+## Vagrant
+.vagrant/
+
+## Minikube
+.minikube/
+
+## Kubernetes
+kubeconfig*
+
+## Telegram / Bot tokens
+*_token
+*bot_token*
+
+## Wireguard
+*.conf
+
+# =============================================================================
+# Project-specific
+# =============================================================================
+
+## The project root is `src/`, ignore parent-level artifacts that leak in
+!.gitignore
+!.gitattributes
+
+## Config overrides / local
+appsettings.local.json
+appsettings.Development.json
+*.local.*
+*.dev.*
+
+## Logs
+logs/
+*.log
+
+## Temp
+tmp/
+temp/
+[Pp]ublish/
+*.tmp
+*.temp
+
+## Code coverage
+*.coverage
+*.coveragexml
+coverage/
+
+## Profiling
+*.prof
+*.pss
+
+## Crash dumps
+*.dmp
+core.*

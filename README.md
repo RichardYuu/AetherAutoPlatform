@@ -1,5 +1,6 @@
 > **本项目由 [OpenCode](https://github.com/obytes/open-code) 进行提炼重构。**  
 > OpenCode 是一款强大的 AI 编程助手，全程参与了该平台的代码重构、架构梳理与质量提升。向 OpenCode 致敬！🚀
+> ClaudeCode 参与整理；
 
 # Aether 设备软件平台 (Aether Device Software Platform)
 

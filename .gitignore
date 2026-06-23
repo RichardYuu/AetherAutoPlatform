@@ -165,6 +165,7 @@ Weaving.Tasks.*
 *.exe
 *.out
 *.app
+!Aether.Platform.App/
 *.com
 *.bin
 *.elf

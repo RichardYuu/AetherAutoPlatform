@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1B2C3D4-0010-4E5F-8A9B-0C1D2E3F4A5B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Aether.Platform.App</RootNamespace>
+    <AssemblyName>Aether.Platform.App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <LangVersion>7.3</LangVersion>
+    <RuntimeIdentifiers>win</RuntimeIdentifiers>
+    <StartupObject>Aether.Platform.App.Program</StartupObject>
+    <GenerateResourceMSBuildArchitecture>CurrentArchitecture</GenerateResourceMSBuildArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>$(USERPROFILE)\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>$(USERPROFILE)\.nuget\packages\microsoft.extensions.dependencyinjection\2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppBootstrap.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aether.Platform.Core\Aether.Platform.Core.csproj">
+      <Project>{A1B2C3D4-0001-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Services\Aether.Platform.Services.csproj">
+      <Project>{A1B2C3D4-0002-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Business\Aether.Platform.Business.csproj">
+      <Project>{A1B2C3D4-0003-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Devices\Aether.Platform.Devices.csproj">
+      <Project>{A1B2C3D4-0004-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Devices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.HAL\Aether.Platform.HAL.csproj">
+      <Project>{A1B2C3D4-0005-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.HAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Data\Aether.Platform.Data.csproj">
+      <Project>{A1B2C3D4-0006-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Scripting\Aether.Platform.Scripting.csproj">
+      <Project>{A1B2C3D4-0007-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Scripting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aether.Platform.Workflow\Aether.Platform.Workflow.csproj">
+      <Project>{A1B2C3D4-0008-4E5F-8A9B-0C1D2E3F4A5B}</Project>
+      <Name>Aether.Platform.Workflow</Name>
+    </ProjectReference>
+    
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="CopyUIAssembly" AfterTargets="AfterBuild">
+    <PropertyGroup>
+      <UIOutputDir>$(MSBuildProjectDirectory)\..\Aether.Platform.UI\$(OutputPath)</UIOutputDir>
+    </PropertyGroup>
+    <Copy SourceFiles="$(UIOutputDir)Aether.Platform.UI.dll;$(UIOutputDir)Aether.Platform.UI.pdb" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="true" Condition="Exists('$(UIOutputDir)Aether.Platform.UI.dll')" />
+  </Target>
+</Project>
